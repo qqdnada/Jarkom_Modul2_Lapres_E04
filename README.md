@@ -35,7 +35,7 @@ Lalu restart bind9 dengan perintah ```service bind9 restart```.
 Terakhir jangan lupa untuk mengarahkan nameserver menuju IP MALANG pada client GRESIK dan SIDOARJO dengan menambahkan konfigurasi berikut pada file resolv.conf.
 
 ```
-  nameserver 10.151.71.42		#IP MALANG
+  nameserver 10.151.71.42 #IP MALANG
 ```
 
 ### Soal No. 2
@@ -113,7 +113,7 @@ Lalu restart bind9 dengan perintah ```service bind9 restart```.
 Terakhir jangan lupa untuk mengarahkan nameserver menuju IP MOJOKERTO pada client GRESIK dan SIDOARJO dengan menambahkan konfigurasi berikut pada file resolv.conf.
 
 ```
-  nameserver 10.151.71.43		#IP MOJOKERTO
+  nameserver 10.151.71.43 #IP MOJOKERTO
 ```
 
 ### Soal No. 6
@@ -157,3 +157,87 @@ Tambahkan konfigurasi berikut pada file gunung.semerue04.pw di MOJOKERTO.
 ```
 
 Lalu restart bind9 dengan perintah ```service bind9 restart```.
+
+### Soal No. 8
+Domain **http://semeruyyy.pw** memiliki DocumentRoot pada /var/www/semeruyyy.pw. Awalnya web dapat diakses menggunakan alamat **http://semeruyyy.pw/index.php/home**.
+
+### Soal No. 9
+Mengaktifkan mod rewrite agar urlnya menjadi **http://semeruyyy.pw/home**.
+
+### Soal No. 10
+Web **http://penanjakan.semeruyyy.pw** akan digunakan untuk menyimpan assets file yang memiliki DocumentRoot pada /var/www/penanjakan.semeruyyy.pw dan memiliki struktur
+folder sebagai berikut:
+
+/var/www/penanjakan.semeruyyy.pw
+                                 /public/javascripts
+                                 /public/css
+                                 /public/images
+                                 /errors
+
+Buat direktori di atas dengan menggunakan perintah di bawah ini
+
+```
+mkdir /var/www/penanjakan.semeruyyy.pw//public
+mkdir /var/www/penanjakan.semeruyyy.pw//public/javascripts
+mkdir /var/www/penanjakan.semeruyyy.pw//public/css
+mkdir /var/www/penanjakan.semeruyyy.pw//public/images
+mkdir /var/www/penanjakan.semeruyyy.pw//errors
+```
+
+### Soal No. 11
+Pada folder /public dibolehkan directory listing namun untuk folder yang berada di dalamnya tidak dibolehkan.
+
+Lakukan mengaktifan directory listing pada /public dengan menambahkan
+
+```
+<Directory /var/www/penanjakan.semerue04.pw/public>
+     Options +Indexes
+</Directory>
+```
+
+Serta matikan directory listing pada folder di dalam /public dengan menambahkan
+
+```
+<Directory /var/www/penanjakan.semerue04.pw/public/css>
+     Options -Indexes
+</Directory>
+
+<Directory /var/www/penanjakan.semerue04.pw/public/images>
+     Options -Indexes
+</Directory>
+
+<Directory /var/www/penanjakan.semerue04.pw/public/javascripts>
+     Options -Indexes
+</Directory>
+```
+
+Kemudian restart apache dengan perintah ```service apache2 restart```.
+
+### Soal No. 12
+Untuk mengatasi HTTP Error code 404, disediakan file 404.html pada folder /errors untuk mengganti error default 404 dari Apache.
+
+
+
+### Soal No. 13
+Untuk mengakses file assets javascript awalnya harus menggunakan url **http://penanjakan.semeruyyy.pw/public/javascripts**. Karena terlalu panjang maka dibuatkan konfigurasi virtual host agar ketika mengakses file assets menjadi **http://penanjakan.semeruyyy.pw/js**.
+
+Untuk membuat alias dapat ditambahkan konfigurasi berikut.
+
+```
+Alias "/js" "/var/www/penanjakan.semerue04.pw/public/javascripts"
+```
+
+Lalu restart apache dengan perintah ```service apache2 restart```.
+
+### Soal No. 14
+Membuat web **http://naik.gunung.semeruyyy.pw** diakses hanya dengan menggunakan port 8888.
+
+### Soal No. 15
+Membuat web http://naik.gunung.semeruyyy.pw agar diberi autentikasi password dengan username “semeru” dan password “kuynaikgunung”.
+
+### Soal No. 16
+Ketika mengunjungi IP PROBOLINGGO akan dialihkan secara otomatis ke **http://semeruyyy.pw**.
+
+
+### Soal No. 17
+Semua request gambar yang memiliki substring “semeru” pada **/var/www/penanjakan.semeruyyy.pw/public/images** akan diarahkan menuju semeru.jpg.
