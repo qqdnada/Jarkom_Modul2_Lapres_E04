@@ -184,7 +184,8 @@ RewriteEngine On
 ```
 
 Screenshot Hasil
-![9](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/9-semeruhome.png)
+
+![nomor9](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/main/images/9-semeruhome.png)
 
 ### Soal No. 10
 Web **http://penanjakan.semeruyyy.pw** akan digunakan untuk menyimpan assets file yang memiliki DocumentRoot pada /var/www/penanjakan.semeruyyy.pw dan memiliki struktur
