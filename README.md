@@ -122,7 +122,7 @@ Membuat subdomain **gunung.semerue04.pw** yang didelegasikan pada server MOJOKER
 Tambahkan konfigurasi berikut pada file semerue04.pw di MALANG.
 
 ```
-  ns1	    IN	A   10.151.71.43
+  ns1	  IN	A   10.151.71.43
   gunung  IN	NS  ns1
 ```
 
@@ -159,7 +159,17 @@ Tambahkan konfigurasi berikut pada file gunung.semerue04.pw di MOJOKERTO.
 Lalu restart bind9 dengan perintah ```service bind9 restart```.
 
 ### Soal No. 8
-Domain **http://semeruyyy.pw** memiliki DocumentRoot pada /var/www/semeruyyy.pw. Awalnya web dapat diakses menggunakan alamat **http://semeruyyy.pw/index.php/home**.
+Domain **http://semeruyyy.pw** memiliki DocumentRoot pada /var/www/semeruyyy.pw.
+
+Script berikut digunakan agar semerue04.pw memiliki DocumentRoot pada /var/www/semeruyyy.pw.
+
+```
+DocumentRoot /var/www/web-8888
+<Directory /var/www/semerue04.pw>
+     Options +FollowSymLinks -Multiviews
+     AllowOverride All
+ </Directory>
+ ```
 
 ### Soal No. 9
 Mengaktifkan mod rewrite agar urlnya menjadi **http://semeruyyy.pw/home**.
@@ -173,17 +183,22 @@ RewriteEngine On
   RewriteRule ^(.*)\?*$ index.php/$1 [L,QSA]
 ```
 
+Screenshot Hasil
+![9](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/9-semeruhome.png)
+
 ### Soal No. 10
 Web **http://penanjakan.semeruyyy.pw** akan digunakan untuk menyimpan assets file yang memiliki DocumentRoot pada /var/www/penanjakan.semeruyyy.pw dan memiliki struktur
 folder sebagai berikut:
 
-/var/www/penanjakan.semeruyyy.pw/public/javascripts
+/var/www/penanjakan.semeruyyy.pw/
 
-/var/www/penanjakan.semeruyyy.pw/public/css
+				public/javascripts
 
-/var/www/penanjakan.semeruyyy.pw/public/images
+				public/css
 
-/var/www/penanjakan.semeruyyy.pw/errors
+				public/images
+
+				errors
 
 Buat direktori di atas dengan menggunakan perintah di bawah ini
 
@@ -224,10 +239,18 @@ Serta matikan directory listing pada folder di dalam /public dengan menambahkan
 
 Kemudian restart apache dengan perintah ```service apache2 restart```.
 
+Halaman ketika mencoba mengakses folder public.
+![11-1](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/11-1-penanjakanhome.png)
+
+Ketika mencoba mengakses folder css, images, atau javascripts akan muncul seperti berikut.
+![11-2](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/11-2-penanjakancss.png)
+
+
 ### Soal No. 12
 Untuk mengatasi HTTP Error code 404, disediakan file 404.html pada folder /errors untuk mengganti error default 404 dari Apache.
 
-
+Dapat menggunakan script di bawah ini.
+![12-1](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/12-1-htaccess_semeru.png)
 
 ### Soal No. 13
 Untuk mengakses file assets javascript awalnya harus menggunakan url **http://penanjakan.semeruyyy.pw/public/javascripts**. Karena terlalu panjang maka dibuatkan konfigurasi virtual host agar ketika mengakses file assets menjadi **http://penanjakan.semeruyyy.pw/js**.
@@ -240,8 +263,14 @@ Alias "/js" "/var/www/penanjakan.semerue04.pw/public/javascripts"
 
 Lalu restart apache dengan perintah ```service apache2 restart```.
 
+![13](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/13-penanjakanjs.png)
+
 ### Soal No. 14
 Membuat web **http://naik.gunung.semeruyyy.pw** diakses hanya dengan menggunakan port 8888.
+
+Agar naik.gunung.semeru.e04.pw hanya dapat diakses menggunakan port 8888, maka isi pada config perlu diubah menjadi ```<VirtualHost *:8888>``` dan ```DocumentRoot /var/www/web-8888```.
+
+Untuk hasilnya dapat dilihat pada gambar pertama di Soal Nomor 15.
 
 ### Soal No. 15
 Membuat web **http://naik.gunung.semeruyyy.pw** agar diberi autentikasi password dengan username “semeru” dan password “kuynaikgunung”.
