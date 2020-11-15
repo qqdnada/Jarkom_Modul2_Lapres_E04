@@ -168,20 +168,22 @@ Mengaktifkan mod rewrite agar urlnya menjadi **http://semeruyyy.pw/home**.
 Web **http://penanjakan.semeruyyy.pw** akan digunakan untuk menyimpan assets file yang memiliki DocumentRoot pada /var/www/penanjakan.semeruyyy.pw dan memiliki struktur
 folder sebagai berikut:
 
-/var/www/penanjakan.semeruyyy.pw
-                                 /public/javascripts
-                                 /public/css
-                                 /public/images
-                                 /errors
+/var/www/penanjakan.semeruyyy.pw/public/javascripts
+
+/var/www/penanjakan.semeruyyy.pw/public/css
+
+/var/www/penanjakan.semeruyyy.pw/public/images
+
+/var/www/penanjakan.semeruyyy.pw/errors
 
 Buat direktori di atas dengan menggunakan perintah di bawah ini
 
 ```
-mkdir /var/www/penanjakan.semeruyyy.pw//public
-mkdir /var/www/penanjakan.semeruyyy.pw//public/javascripts
-mkdir /var/www/penanjakan.semeruyyy.pw//public/css
-mkdir /var/www/penanjakan.semeruyyy.pw//public/images
-mkdir /var/www/penanjakan.semeruyyy.pw//errors
+mkdir /var/www/penanjakan.semeruyyy.pw/public
+mkdir /var/www/penanjakan.semeruyyy.pw/public/javascripts
+mkdir /var/www/penanjakan.semeruyyy.pw/public/css
+mkdir /var/www/penanjakan.semeruyyy.pw/public/images
+mkdir /var/www/penanjakan.semeruyyy.pw/errors
 ```
 
 ### Soal No. 11
