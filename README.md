@@ -241,17 +241,17 @@ Serta matikan directory listing pada folder di dalam /public dengan menambahkan
 Kemudian restart apache dengan perintah ```service apache2 restart```.
 
 Halaman ketika mencoba mengakses folder public.
-![11-1](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/11-1-penanjakanhome.png)
+![11-1](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/main/images/11-1-penanjakanhome.png)
 
 Ketika mencoba mengakses folder css, images, atau javascripts akan muncul seperti berikut.
-![11-2](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/11-2-penanjakancss.png)
+![11-2](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/main/images/11-2-penanjakancss.png)
 
 
 ### Soal No. 12
 Untuk mengatasi HTTP Error code 404, disediakan file 404.html pada folder /errors untuk mengganti error default 404 dari Apache.
 
 Dapat menggunakan script di bawah ini.
-![12-1](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/12-1-htaccess_semeru.png)
+![12-1](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/main/images/12-1-htaccess_semeru.png)
 
 ### Soal No. 13
 Untuk mengakses file assets javascript awalnya harus menggunakan url **http://penanjakan.semeruyyy.pw/public/javascripts**. Karena terlalu panjang maka dibuatkan konfigurasi virtual host agar ketika mengakses file assets menjadi **http://penanjakan.semeruyyy.pw/js**.
@@ -264,7 +264,7 @@ Alias "/js" "/var/www/penanjakan.semerue04.pw/public/javascripts"
 
 Lalu restart apache dengan perintah ```service apache2 restart```.
 
-![13](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/13-penanjakanjs.png)
+![13](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/main/images/13-penanjakanjs.png)
 
 ### Soal No. 14
 Membuat web **http://naik.gunung.semeruyyy.pw** diakses hanya dengan menggunakan port 8888.
@@ -303,28 +303,28 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 ```
 
 Berikut hasil screenshotnya.
-![15-1](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/15-1-naikauth.png)
+![15-1](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/main/images/15-1-naikauth.png)
 
 Jika berhasil akan muncul seperti berikut.
-![15-2](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/15-2-authsuccess.png)
+![15-2](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/main/images/15-2-authsuccess.png)
 
 Sedangkan jika gagal akan muncul.
-![15-3](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/15-3-authwrong.png)
+![15-3](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/main/images/15-3-authwrong.png)
 
 ### Soal No. 16
 Ketika mengunjungi IP PROBOLINGGO akan dialihkan secara otomatis ke **http://semeruyyy.pw**.
 
 Untuk redirect IP PROBOLINGGO ke **http://semeruyyy.pw** dapat digunakan script berikut ini.
-![16-script](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/16-1-php_redirectIP.png)
+![16-script](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/main/images/16-1-php_redirectIP.png)
 
 Adapun ketika mencoba mengakses IP Probolinggo maka halaman http://semerue04.pw yang muncul.
-![16-hasil](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/16-2-semerupw.png)
+![16-hasil](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/main/images/16-2-semerupw.png)
 
 ### Soal No. 17
 Semua request gambar yang memiliki substring “semeru” pada **/var/www/penanjakan.semeruyyy.pw/public/images** akan diarahkan menuju semeru.jpg.
 
 Script berikut digunakan agar semua request gambar yang memiliki substring “semeru” pada **/var/www/penanjakan.semeruyyy.pw/public/images** diarahkan menuju semeru.jpg.
-![17-script](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/17-1-htaccess_penanjakan.png)
+![17-script](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/main/images/17-1-htaccess_penanjakan.png)
 
 Berikut hasil ketika kita meminta gambar yang memiliki substring "semeru".
-![17-hasil](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/17-2-penanjakansemeru.png)
+![17-hasil](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/main/images/17-2-penanjakansemeru.png)
