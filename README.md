@@ -39,7 +39,7 @@ Terakhir jangan lupa untuk mengarahkan nameserver menuju IP MALANG pada client G
 ```
 
 ### Soal No. 2
-Membuat alias ***www.semerue04.pw***
+Membuat alias **www.semerue04.pw**
 
 Untuk membuat nama alias dan mengarahkan domain ke domain yang lain, pada MALANG di file semerue04.pw tambahkan konfigurasi berikut
 
@@ -50,7 +50,7 @@ Untuk membuat nama alias dan mengarahkan domain ke domain yang lain, pada MALANG
 Kemudian restart bind9 dengan perintah ```service bind9 restart```.
 
 ### Soal No. 3
-Membuat subdomain ***penanjakan.semerue04.pw*** yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
+Membuat subdomain **penanjakan.semerue04.pw** yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
 
 Tambahkan konfigurasi berikut pada file semerue04.pw di MALANG.
 
@@ -117,7 +117,7 @@ Terakhir jangan lupa untuk mengarahkan nameserver menuju IP MOJOKERTO pada clien
 ```
 
 ### Soal No. 6
-Membuat subdomain ***gunung.semerue04.pw*** yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO.
+Membuat subdomain **gunung.semerue04.pw** yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO.
 
 Tambahkan konfigurasi berikut pada file semerue04.pw di MALANG.
 
@@ -148,7 +148,7 @@ Lalu pada file gunung.semerue04.pw tambahkan konfigurasi berikut.
 Kemudian restart bind9 dengan perintah ```service bind9 restart```.
 
 ### Soal No. 7
-Membuat subdomain ***naik.gunung.semerue04.pw*** yang mengarah ke IP Server PROBOLINGGO.
+Membuat subdomain **naik.gunung.semerue04.pw** yang mengarah ke IP Server PROBOLINGGO.
 
 Tambahkan konfigurasi berikut pada file gunung.semerue04.pw di MOJOKERTO.
 
