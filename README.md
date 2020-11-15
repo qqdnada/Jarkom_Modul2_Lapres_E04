@@ -184,6 +184,7 @@ RewriteEngine On
 ```
 
 Screenshot Hasil
+<img width="496" alt="9" src="https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/9-semeruhome.png">
 ![9](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/9-semeruhome.png)
 
 ### Soal No. 10
