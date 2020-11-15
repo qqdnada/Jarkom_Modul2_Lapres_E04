@@ -164,6 +164,15 @@ Domain **http://semeruyyy.pw** memiliki DocumentRoot pada /var/www/semeruyyy.pw.
 ### Soal No. 9
 Mengaktifkan mod rewrite agar urlnya menjadi **http://semeruyyy.pw/home**.
 
+Untuk mengaktifkan mod rewrite agar url menjadi **http://semeruyyy.pw/home** dapat menggunakan script berikut pada .htaccess di PROBOLINGGO.
+
+```
+RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)\?*$ index.php/$1 [L,QSA]
+```
+
 ### Soal No. 10
 Web **http://penanjakan.semeruyyy.pw** akan digunakan untuk menyimpan assets file yang memiliki DocumentRoot pada /var/www/penanjakan.semeruyyy.pw dan memiliki struktur
 folder sebagai berikut:
@@ -235,11 +244,57 @@ Lalu restart apache dengan perintah ```service apache2 restart```.
 Membuat web **http://naik.gunung.semeruyyy.pw** diakses hanya dengan menggunakan port 8888.
 
 ### Soal No. 15
-Membuat web http://naik.gunung.semeruyyy.pw agar diberi autentikasi password dengan username “semeru” dan password “kuynaikgunung”.
+Membuat web **http://naik.gunung.semeruyyy.pw** agar diberi autentikasi password dengan username “semeru” dan password “kuynaikgunung”.
+
+Script untuk autentikasi seperti permintaan soal.
+```
+<?php
+if (!isset($_SERVER['PHP_AUTH_USER'])) {
+    header('WWW-Authenticate: Basic realm="My Realm"');
+    header('HTTP/1.0 401 Unauthorized');
+    echo 'You are not logged in.';
+    exit;
+} else {
+	if($_SERVER['PHP_AUTH_USER'] == 'semeru' || $_SERVER['PHP_AUTH_PW'] == 'kuynaikgunung')
+	{
+    		echo 'This is the website.';
+		destroy();
+		exit;
+	}
+	else
+	{
+		header('HTTP/1.0 401 Unauthorized');
+    		echo 'Wrong credentials. Please try again by reloading.';
+		destroy();
+    		exit;
+	}
+}
+?>
+```
+
+Berikut hasil screenshotnya.
+![15-1](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/15-1-naikauth.png)
+
+Jika berhasil akan muncul seperti berikut.
+![15-2](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/15-2-authsuccess.png)
+
+Sedangkan jika gagal akan muncul.
+![15-3](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/15-3-authwrong.png)
 
 ### Soal No. 16
 Ketika mengunjungi IP PROBOLINGGO akan dialihkan secara otomatis ke **http://semeruyyy.pw**.
 
+Untuk redirect IP PROBOLINGGO ke **http://semeruyyy.pw** dapat digunakan script berikut ini.
+![16-script](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/16-1-php_redirectIP.png)
+
+Adapun ketika mencoba mengakses IP Probolinggo maka halaman http://semerue04.pw yang muncul.
+![16-hasil](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/16-2-semerupw.png)
 
 ### Soal No. 17
 Semua request gambar yang memiliki substring “semeru” pada **/var/www/penanjakan.semeruyyy.pw/public/images** akan diarahkan menuju semeru.jpg.
+
+Script berikut digunakan agar semua request gambar yang memiliki substring “semeru” pada **/var/www/penanjakan.semeruyyy.pw/public/images** diarahkan menuju semeru.jpg.
+![17-script](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/17-1-htaccess_penanjakan.png)
+
+Berikut hasil ketika kita meminta gambar yang memiliki substring "semeru".
+![17-hasil](https://github.com/qqdnada/Jarkom_Modul2_Lapres_E04/blob/master/images/17-2-penanjakansemeru.png)
